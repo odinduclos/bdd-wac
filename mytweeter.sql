@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `members` (
   `name` varchar(30) NOT NULL,
   `password` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `date_registration` datetime NOT NULL,
+  `date_registration` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `location` varchar(50) NOT NULL,
   `profil_image` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
