@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 3.4.11.1deb2+deb7u1
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 10 Juillet 2015 à 09:29
--- Version du serveur: 5.5.43-0ubuntu0.14.04.1
--- Version de PHP: 5.5.9-1ubuntu4.11
+-- Généré le: Jeu 16 Juillet 2015 à 12:26
+-- Version du serveur: 5.5.40
+-- Version de PHP: 5.4.36-0+deb7u3
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `mytweeter`
 --
-CREATE DATABASE IF NOT EXISTS `mytweeter` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `mytweeter`;
 
 -- --------------------------------------------------------
 
@@ -53,6 +51,19 @@ CREATE TABLE IF NOT EXISTS `followers` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `identification`
+--
+
+DROP TABLE IF EXISTS `identification`;
+CREATE TABLE IF NOT EXISTS `identification` (
+  `id_member` int(11) NOT NULL,
+  `id_tweet` int(11) NOT NULL,
+  PRIMARY KEY (`id_member`,`id_tweet`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `members`
 --
 
@@ -66,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `members` (
   `date_registration` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `location` varchar(50) NOT NULL,
   `profil_image` varchar(255) NOT NULL,
-  `mail` varchar(75) CHARACTER SET utf8 NOT NULL,
+  `mail` varchar(75) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
