@@ -168,6 +168,7 @@ CREATE TABLE IF NOT EXISTS `tweets` (
   `date` datetime NOT NULL,
   `content` text NOT NULL,
   `deleted` tinyint(1) NOT NULL,
+  `tweet_parent` int(11) NOT NULL,
   PRIMARY KEY (`id_tweet`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
